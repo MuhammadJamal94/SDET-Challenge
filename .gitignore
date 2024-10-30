@@ -5,6 +5,7 @@ frontend/dist
 frontend/reports
 frontend/result
 frontend/.env
+frontend/test-results
 
 backend/target
 backend/.idea
