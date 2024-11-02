@@ -92,7 +92,7 @@
         {
           "title": "Music App Tests",
           "file": "tests/music-app.spec.ts",
-          "line": 6,
+          "line": 13,
           "column": 6,
           "specs": [
             {
@@ -108,14 +108,14 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 1,
+                      "workerIndex": 63,
                       "status": "passed",
-                      "duration": 3678,
+                      "duration": 2324,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-10-31T09:48:00.490Z",
+                      "startTime": "2024-11-02T23:25:11.029Z",
                       "attachments": [
                         {
                           "name": "trace",
@@ -130,7 +130,128 @@
               ],
               "id": "56eedb9f49f2423fedf0-fa06f795afad19fec15d",
               "file": "tests/music-app.spec.ts",
-              "line": 19,
+              "line": 28,
+              "column": 7
+            },
+            {
+              "title": "Search for an artist using the search feature",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 10000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 63,
+                      "status": "passed",
+                      "duration": 1934,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-02T23:25:14.729Z",
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/mohamad/Desktop/ui-be/frontend/test-results/tests-music-app-Music-App--91d87-st-using-the-search-feature-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "56eedb9f49f2423fedf0-1e710aab396b4ea43041",
+              "file": "tests/music-app.spec.ts",
+              "line": 39,
+              "column": 7
+            },
+            {
+              "title": "Follow through to one of the artist's albums",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 10000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 63,
+                      "status": "passed",
+                      "duration": 3026,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-02T23:25:17.012Z",
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/mohamad/Desktop/ui-be/frontend/test-results/tests-music-app-Music-App--5ec63--one-of-the-artist-s-albums-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "56eedb9f49f2423fedf0-22199ee34fec934c77c7",
+              "file": "tests/music-app.spec.ts",
+              "line": 47,
+              "column": 7
+            },
+            {
+              "title": "Confirm album details and all song details are displayed within the album",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 10000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 63,
+                      "status": "passed",
+                      "duration": 3389,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "{\n  id: \u001b[32m'5dXU3rx7fHkNJ1kTzvRQb3'\u001b[39m,\n  name: \u001b[32m'Call Me Irresponsible (Deluxe)'\u001b[39m,\n  artist: \u001b[32m'Michael Bublé'\u001b[39m\n}\n"
+                        },
+                        {
+                          "text": "[\n  \u001b[32m'The Best Is yet to Come'\u001b[39m,\n  \u001b[32m'It Had Better Be Tonight (Meglio Stasera)'\u001b[39m,\n  \u001b[32m'Me and Mrs. Jones'\u001b[39m,\n  \u001b[32m\"I'm Your Man\"\u001b[39m,\n  \u001b[32m\"Comin' Home Baby (with Boyz II Men)\"\u001b[39m,\n  \u001b[32m'Lost'\u001b[39m,\n  \u001b[32m'Call Me Irresponsible'\u001b[39m,\n  \u001b[32m'Wonderful Tonight (with Ivan Lins)'\u001b[39m,\n  \u001b[32m'Everything'\u001b[39m,\n  \u001b[32m\"I've Got the World on a String\"\u001b[39m,\n  \u001b[32m'Always on My Mind'\u001b[39m,\n  \u001b[32m\"That's Life\"\u001b[39m,\n  \u001b[32m'Dream'\u001b[39m,\n  \u001b[32m'L O V E'\u001b[39m\n]\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2024-11-02T23:25:20.491Z",
+                      "attachments": [
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "/Users/mohamad/Desktop/ui-be/frontend/test-results/tests-music-app-Music-App--af8c1--displayed-within-the-album-chromium/trace.zip"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "56eedb9f49f2423fedf0-beb079ae8ea548d67c1b",
+              "file": "tests/music-app.spec.ts",
+              "line": 62,
               "column": 7
             }
           ]
@@ -140,9 +261,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-10-31T09:47:59.895Z",
-    "duration": 5808.080999999991,
-    "expected": 1,
+    "startTime": "2024-11-02T23:25:10.293Z",
+    "duration": 14088.758999999613,
+    "expected": 4,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

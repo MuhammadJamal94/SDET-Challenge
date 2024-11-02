@@ -2,16 +2,25 @@ import { test, expect, Locator } from "@playwright/test";
 import { HomePage } from "../pages/HomePage";
 import { SearchResultsPage } from "../pages/SearchResultsPage";
 import { ArtistPage } from "../pages/ArtistPage";
+import { AlbumPage } from "../pages/AlbumPage";
+
+interface AlbumDetails {
+  id: string;
+  name: string;
+  artist: string;
+}
 
 test.describe("Music App Tests", () => {
   let homePage: HomePage;
   let searchResultsPage: SearchResultsPage;
   let artistPage: ArtistPage;
+  let albumPage: AlbumPage;
 
   test.beforeEach(async ({ page }) => {
     homePage = new HomePage(page);
     searchResultsPage = new SearchResultsPage(page);
     artistPage = new ArtistPage(page);
+    albumPage = new AlbumPage(page);
 
     await page.goto("/");
   });
@@ -50,20 +59,28 @@ test.describe("Music App Tests", () => {
     await searchResultsPage.page.waitForLoadState('networkidle');
   });
 
-  test("Confirm album details and all song details are displayed within the album", async ({
-    page,
-  }) => {
-    await page.goto("http://localhost:3000");
-    const searchInput = await page.locator('input[placeholder="Search"]');
-    await searchInput.fill("Artist Name");
-    await searchInput.press("Enter");
-    const artistResult = await page.locator("text=Artist Name");
-    await artistResult.click();
-    const album = await page.locator("text=Album Name");
-    await album.click();
-    const albumDetails = await page.locator("text=Album Details");
-    await expect(albumDetails).toBeVisible();
-    const songDetails = await page.locator('li:has-text("Song Name")');
-    await expect(songDetails).toBeVisible();
+  test("Confirm album details and all song details are displayed within the album", async () => {
+    let albumDetails: AlbumDetails;
+
+    await homePage.searchForArtist("Michael Bublé");
+    
+    await searchResultsPage.checkHeader("Michael Bublé");
+    await searchResultsPage.checkSearchResults("Michael Bublé");
+    await searchResultsPage.page.waitForLoadState('networkidle');
+
+    // Select a random album and get its details
+    albumDetails = await artistPage.selectRandomAlbumAndGetDetails();
+    console.log(albumDetails);
+
+    await expect(artistPage.page).toHaveURL(new RegExp(`/album/${albumDetails.id}`));
+
+    // Verify album details
+    await expect(albumPage.albumName).toHaveText(albumDetails.name);
+    await expect(albumPage.albumArtist).toHaveText(albumDetails.artist);
+    await expect(albumPage.songsDiv).toBeVisible();
+
+    // Verify song details
+    const albumSongs = await albumPage.verifyAlbumSongs(albumDetails.id);
+    expect(albumPage.verifySongsDisplayed(albumSongs)).toBeTruthy();
   });
 });
