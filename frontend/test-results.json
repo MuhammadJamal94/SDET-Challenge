@@ -1,7 +1,7 @@
 {
   "config": {
-    "configFile": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend/playwright.config.ts",
-    "rootDir": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend",
+    "configFile": "/Users/mohamad/Desktop/ui-be/frontend/playwright.config.ts",
+    "rootDir": "/Users/mohamad/Desktop/ui-be/frontend",
     "forbidOnly": false,
     "fullyParallel": false,
     "globalSetup": null,
@@ -11,7 +11,7 @@
     "grepInvert": null,
     "maxFailures": 0,
     "metadata": {
-      "actualWorkers": 3
+      "actualWorkers": 1
     },
     "preserveOutput": "always",
     "reporter": [
@@ -33,13 +33,13 @@
     "quiet": false,
     "projects": [
       {
-        "outputDir": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend/test-results",
+        "outputDir": "/Users/mohamad/Desktop/ui-be/frontend/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "chromium",
         "name": "chromium",
-        "testDir": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend",
+        "testDir": "/Users/mohamad/Desktop/ui-be/frontend",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -47,13 +47,13 @@
         "timeout": 10000
       },
       {
-        "outputDir": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend/test-results",
+        "outputDir": "/Users/mohamad/Desktop/ui-be/frontend/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "firefox",
         "name": "firefox",
-        "testDir": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend",
+        "testDir": "/Users/mohamad/Desktop/ui-be/frontend",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -61,13 +61,13 @@
         "timeout": 10000
       },
       {
-        "outputDir": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend/test-results",
+        "outputDir": "/Users/mohamad/Desktop/ui-be/frontend/test-results",
         "repeatEach": 1,
         "retries": 0,
         "metadata": {},
         "id": "webkit",
         "name": "webkit",
-        "testDir": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend",
+        "testDir": "/Users/mohamad/Desktop/ui-be/frontend",
         "testIgnore": [],
         "testMatch": [
           "**/*.@(spec|test).?(c|m)[jt]s?(x)"
@@ -108,73 +108,19 @@
                   "projectName": "chromium",
                   "results": [
                     {
-                      "workerIndex": 22,
+                      "workerIndex": 1,
                       "status": "passed",
-                      "duration": 3846,
+                      "duration": 3678,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2024-10-30T23:11:12.576Z",
+                      "startTime": "2024-10-31T09:48:00.490Z",
                       "attachments": [
                         {
                           "name": "trace",
                           "contentType": "application/zip",
-                          "path": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend/test-results/tests-music-app-Music-App--1c369--displayed-on-the-Home-page-chromium/trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                },
-                {
-                  "timeout": 10000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "firefox",
-                  "projectName": "firefox",
-                  "results": [
-                    {
-                      "workerIndex": 23,
-                      "status": "passed",
-                      "duration": 3634,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-10-30T23:11:12.576Z",
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend/test-results/tests-music-app-Music-App--1c369--displayed-on-the-Home-page-firefox/trace.zip"
-                        }
-                      ]
-                    }
-                  ],
-                  "status": "expected"
-                },
-                {
-                  "timeout": 10000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "webkit",
-                  "projectName": "webkit",
-                  "results": [
-                    {
-                      "workerIndex": 24,
-                      "status": "passed",
-                      "duration": 4386,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2024-10-30T23:11:12.576Z",
-                      "attachments": [
-                        {
-                          "name": "trace",
-                          "contentType": "application/zip",
-                          "path": "/Users/mohamad/Desktop/sdet-recruitment-master/frontend/test-results/tests-music-app-Music-App--1c369--displayed-on-the-Home-page-webkit/trace.zip"
+                          "path": "/Users/mohamad/Desktop/ui-be/frontend/test-results/tests-music-app-Music-App--1c369--displayed-on-the-Home-page-chromium/trace.zip"
                         }
                       ]
                     }
@@ -194,9 +140,9 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-10-30T23:11:11.966Z",
-    "duration": 8711.799000000581,
-    "expected": 3,
+    "startTime": "2024-10-31T09:47:59.895Z",
+    "duration": 5808.080999999991,
+    "expected": 1,
     "skipped": 0,
     "unexpected": 0,
     "flaky": 0

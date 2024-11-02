@@ -22,8 +22,8 @@ public class ControllerClass {
 	@ResponseBody
 	public User getUserDexterity(@PathVariable String name){
 		return repositoryClass.loadUser(name);
-	}	
-	
+	}
+
 	@RequestMapping(path="/order", method=RequestMethod.POST)
 	@ResponseBody
 	public String addUser(@RequestParam String user, String item) throws Exception {
@@ -38,4 +38,10 @@ public class ControllerClass {
 		}
 	}
 
+	// New method for root URL
+    @RequestMapping(path="/", method=RequestMethod.GET)
+    @ResponseBody
+    public String home() {
+        return "Welcome to the Home Page!";
+	}
 }
