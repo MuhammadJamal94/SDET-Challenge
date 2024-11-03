@@ -34,7 +34,7 @@ Estimated Time: 1-2 hours per assessment (maximum)
 #### ⏳ Not enought time?
 
 We understand that you won't be able to implement everything you'd like to get this application up to scratch, please document all your suggested improvements here in as much detail as possible.
-Things to keep in mind
+Things to keep in mind => Check documents folder in each project.
 
     Remember to structure and use your code efficiently as you would in a real life project.
     Think about the testing levels in the pyramid that could be used.
