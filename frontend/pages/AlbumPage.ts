@@ -25,8 +25,7 @@ export class AlbumPage {
       `https://api.spotify.com/v1/albums/${albumId}`,
       {
         headers: {
-          authorization:
-            `Bearer ${await this.getBearerToken()}`,
+          authorization: `Bearer ${await this.getBearerToken()}`,
           accept: "application/json",
         },
       }
@@ -34,18 +33,18 @@ export class AlbumPage {
 
     const data = await response.json();
     const albumSongs = data.tracks.items.map((track: any) => track.name);
-    console.log(albumSongs);
     return albumSongs;
   }
 
   async getBearerToken(): Promise<string> {
-    const response = await fetch('https://accounts.spotify.com/api/token', {
-      method: 'POST',
+    const response = await fetch("https://accounts.spotify.com/api/token", {
+      method: "POST",
       headers: {
-        'authorization': 'Basic NGNkMWRhNTIyYTYzNGRiZWFjMDI3MzdlM2NmOTY5OGI6NjUzMjdiMWEyODRjNDczM2I0Y2VlNGFlYTJkZjhjNDg=',
-        'content-type': 'application/x-www-form-urlencoded',
+        authorization:
+          "Basic NGNkMWRhNTIyYTYzNGRiZWFjMDI3MzdlM2NmOTY5OGI6NjUzMjdiMWEyODRjNDczM2I0Y2VlNGFlYTJkZjhjNDg=",
+        "content-type": "application/x-www-form-urlencoded",
       },
-      body: 'grant_type=client_credentials'
+      body: "grant_type=client_credentials",
     });
 
     const data = await response.json();

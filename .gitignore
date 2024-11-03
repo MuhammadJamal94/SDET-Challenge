@@ -6,6 +6,8 @@ frontend/reports
 frontend/result
 frontend/.env
 frontend/test-results
+frontend/playwright-report/data
+frontend/playwright-report/index.html
 
 backend/target
 backend/.idea

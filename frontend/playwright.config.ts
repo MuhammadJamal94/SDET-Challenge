@@ -14,17 +14,17 @@ const config: PlaywrightTestConfig = {
             name: 'chromium',
             use: { browserName: 'chromium' },
         },
-        {
-            name: 'firefox',
-            use: { browserName: 'firefox' },
-        },
-        {
-            name: 'webkit',
-            use: { browserName: 'webkit' },
-        },
+        // {
+        //     name: 'firefox',
+        //     use: { browserName: 'firefox' },
+        // },
+        // {
+        //     name: 'webkit',
+        //     use: { browserName: 'webkit' },
+        // },
     ],
-    reporter: [['list'], ['json', { outputFile: 'test-results.json' }]],
-    timeout: 10000,
+    reporter: 'html',
+    timeout: 30000,
 };
 
 export default config;

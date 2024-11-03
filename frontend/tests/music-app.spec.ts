@@ -1,4 +1,4 @@
-import { test, expect, Locator } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 import { HomePage } from "../pages/HomePage";
 import { SearchResultsPage } from "../pages/SearchResultsPage";
 import { ArtistPage } from "../pages/ArtistPage";
@@ -45,34 +45,35 @@ test.describe("Music App Tests", () => {
   });
 
   test("Follow through to one of the artist's albums", async () => {
-    let temp: Locator;
+    let albumDetails: AlbumDetails;
+
     await homePage.searchForArtist("Michael Bublé");
     await searchResultsPage.checkHeader("Michael Bublé");
     expect(searchResultsPage.checkSearchResults("Michael Bublé")).toBeTruthy();
-    // await searchResultsPage.foundArtistDiv?.click();
-    // temp = await searchResultsPage.getFoundArtist("Michael Bublé");
-    // await temp.click();
     await expect(searchResultsPage.page).toHaveURL(/artist/);
-    await searchResultsPage.page.waitForLoadState('networkidle');
+    await searchResultsPage.page.waitForLoadState("networkidle");
     expect(artistPage.albumsHeader).toBeVisible();
-    await artistPage.selectRandomAlbum();
-    await searchResultsPage.page.waitForLoadState('networkidle');
+    albumDetails = await artistPage.selectRandomAlbumAndGetDetails();
+    await searchResultsPage.page.waitForLoadState("networkidle");
+    await expect(albumPage.albumName).toHaveText(albumDetails.name);
   });
 
   test("Confirm album details and all song details are displayed within the album", async () => {
     let albumDetails: AlbumDetails;
 
     await homePage.searchForArtist("Michael Bublé");
-    
+
     await searchResultsPage.checkHeader("Michael Bublé");
     await searchResultsPage.checkSearchResults("Michael Bublé");
-    await searchResultsPage.page.waitForLoadState('networkidle');
+    await searchResultsPage.page.waitForLoadState("networkidle");
 
     // Select a random album and get its details
     albumDetails = await artistPage.selectRandomAlbumAndGetDetails();
     console.log(albumDetails);
 
-    await expect(artistPage.page).toHaveURL(new RegExp(`/album/${albumDetails.id}`));
+    await expect(artistPage.page).toHaveURL(
+      new RegExp(`/album/${albumDetails.id}`)
+    );
 
     // Verify album details
     await expect(albumPage.albumName).toHaveText(albumDetails.name);

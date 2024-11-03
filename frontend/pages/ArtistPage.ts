@@ -12,24 +12,15 @@ export class ArtistPage {
     this.artistAlbumsGrid = this.albumsHeader.locator(
       "xpath=following-sibling::*[1]"
     );
-    this.artistAlbums = this.artistAlbumsGrid.locator('> div');
+    this.artistAlbums = this.artistAlbumsGrid.locator("> div");
   }
 
-  async selectRandomAlbum() {
-    const albumsDivs = this.artistAlbumsGrid.locator("div");
-    const artistDivCount = await albumsDivs.count();
-
-    if (artistDivCount === 0) {
-      throw new Error("No albums found.");
-    }
-
-    const randomIndex = Math.floor(Math.random() * artistDivCount);
-    const randomAlbumDiv = albumsDivs.nth(randomIndex);
-    await randomAlbumDiv.click();
-  }
   async selectRandomAlbumAndGetDetails() {
-    // const albumsDivs = this.artistAlbumsGrid.locator("div");
-    let albumDetails: {id: string, name: string, artist: string} = {id: "", name: "", artist: ""};
+    let albumDetails: { id: string; name: string; artist: string } = {
+      id: "",
+      name: "",
+      artist: "",
+    };
     const artistDivCount = await this.artistAlbums.count();
 
     if (artistDivCount === 0) {
@@ -38,12 +29,9 @@ export class ArtistPage {
 
     const randomIndex = Math.floor(Math.random() * artistDivCount);
     const randomAlbumDiv = this.artistAlbums.nth(randomIndex);
-    // console.log(await this.getAlbumDetails(randomAlbumDiv));
     albumDetails = await this.getAlbumDetails(randomAlbumDiv);
     await randomAlbumDiv.click();
     return albumDetails;
-
-    // return this.getAlbumDetails(randomAlbumDiv);
   }
 
   async getAlbumDetails(artistDiv: Locator) {
