@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "scripts": {
     "start": "vite",
-    "build": "tsc && vite build"
+    "build": "tsc && vite build",
+    "show-report": "npx playwright show-report tests/playwright-report"
   },
   "dependencies": {
     "@tailwindcss/line-clamp": "^0.4.0",
